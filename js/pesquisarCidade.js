@@ -11,9 +11,6 @@ const getloc = () => {
         fetch(geoApiUrl)
         .then(res => res.json())
         .then(data => {
-            //status.textContent = data.city
-            //document.querySelector(".cidade").innerHTML = data.city;
-            console.log(data.city)
             checarClima(data.city)
         })
     }
