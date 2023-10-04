@@ -1,3 +1,30 @@
+const getloc = () => {
+    const status = document.querySelector('.erro');
+
+    const success = (position) => {
+        console.log(position)
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+
+        fetch(geoApiUrl)
+        .then(res => res.json())
+        .then(data => {
+            //status.textContent = data.city
+            //document.querySelector(".cidade").innerHTML = data.city;
+            console.log(data.city)
+            checarClima(data.city)
+        })
+    }
+
+    const error = () =>{
+        status.textContent = 'Não foi possível obter localização';
+    }
+       navigator.geolocation.getCurrentPosition(success, error);
+ 
+}
+
 const apiKey = "0e285511aeab3b0597b8bc36a44b20c9";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 const pesquisa = document.querySelector(".pesquisa input");
@@ -42,4 +69,7 @@ async function checarClima(cidade){
 botao.addEventListener("click", ()=> {
     checarClima(pesquisa.value);
 })
+
+
+document.querySelector('.loc').addEventListener('click', getloc);
 
