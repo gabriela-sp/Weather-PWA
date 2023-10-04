@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PWA Weather App feito para atividade de Mobile">
+    <meta name="theme-color" content="#555555">
+    <link rel="icon" href="./AppImages/android/android-launchericon-192-192.png" type="image/x-icon">
+    <title>Weather PWA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="./AppImages/android/android-launchericon-512-512.png">
+</head>
+<body>
+
+    <div class="container">
+        <div class="pesquisa">
+            <input type="text" placeholder="Escreva o nome da cidade" spellcheck="false">
+            <button><img src="img/search.png" alt="Search button"></button>
+        </div>
+        <div class="erro">
+            <p>Cidade inválida!</p>
+        </div> 
+        <div class="clima">
+            <img src="img/clouds.png" class="clima-icon">
+            <h1 class="temp">22°C</h1>
+            <h2 class="cidade">Recife</h2>
+            <div class="detalhes">
+                <div class="col">
+                    <img src="img/humidity.png">
+                    <div>
+                        <p class="umidade">50%</p>
+                        <p>Umidade</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="img/wind.png">
+                    <div>
+                        <p class="vento">15 km/h</p>
+                        <p>Velocidade do vento</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="/js/pesquisarCidade.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
